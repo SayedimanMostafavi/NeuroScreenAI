@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NeuroScreenAI - Result</title>
+
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"Segoe UI",sans-serif;
+    background:linear-gradient(135deg,#eef5fb,#dfeeff);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+}
+
+.container{
+    width:900px;
+    max-width:95%;
+    background:white;
+    border-radius:20px;
+    box-shadow:0 20px 60px rgba(0,0,0,.15);
+    overflow:hidden;
+    animation:fade .7s ease;
+}
+
+.header{
+    background:#1565C0;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+.header h1{
+    font-size:40px;
+}
+
+.header p{
+    margin-top:8px;
+    opacity:.9;
+}
+
+.brain{
+    display:flex;
+    justify-content:center;
+    margin-top:-25px;
+}
+
+.result{
+    text-align:center;
+    padding:25px;
+}
+
+.result h2{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.healthy{
+    color:#2E7D32;
+}
+
+.depression{
+    color:#C62828;
+}
+
+.card-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+    padding:30px;
+}
+
+.card{
+    background:#f7fbff;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.card h3{
+    color:#1565C0;
+    margin-bottom:10px;
+}
+
+.value{
+    font-size:28px;
+    font-weight:bold;
+    color:#333;
+}
+
+.progress{
+    width:100%;
+    height:18px;
+    background:#ddd;
+    border-radius:30px;
+    overflow:hidden;
+    margin-top:15px;
+}
+
+.progress-bar{
+    height:100%;
+    width:{{ probability }}%;
+    animation:grow 1.2s ease;
+
+    {% if probability < 30 %}
+        background:#2E7D32;
+    {% elif probability < 60 %}
+        background:#F9A825;
+    {% else %}
+        background:#C62828;
+    {% endif %}
+}
+
+.interpretation{
+    padding:30px;
+}
+
+.interpretation h3{
+    color:#1565C0;
+    margin-bottom:15px;
+}
+
+.interpretation p{
+    line-height:1.8;
+    color:#555;
+}
+
+.button{
+    text-align:center;
+    padding:30px;
+}
+
+.button a{
+    display:inline-block;
+    text-decoration:none;
+    background:#1565C0;
+    color:white;
+    padding:15px 40px;
+    border-radius:10px;
+    font-size:18px;
+    transition:.3s;
+}
+
+.button a:hover{
+    background:#0d47a1;
+}
+
+.footer{
+    text-align:center;
+    padding:20px;
+    color:#777;
+    font-size:14px;
+}
+
+@keyframes fade{
+
+from{
+    opacity:0;
+    transform:translateY(25px);
+}
+
+to{
+    opacity:1;
+    transform:translateY(0);
+}
+
+}
+
+@keyframes grow{
+
+from{
+    width:0;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+
+<h1>NeuroScreenAI</h1>
+
+<p>AI-powered EEG Depression Screening</p>
+
+</div>
+
+<div class="brain">
+
+<lottie-player
+src="https://assets2.lottiefiles.com/packages/lf20_ydo1amjm.json"
+background="transparent"
+speed="1"
+style="width:180px;height:180px"
+loop
+autoplay>
+</lottie-player>
+
+</div>
+
+<div class="result">
+
+{% if diagnosis=="Healthy" %}
+
+<h2 class="healthy">✔ Healthy</h2>
+
+<p>No significant depressive EEG patterns were detected.</p>
+
+{% else %}
+
+<h2 class="depression">⚠ Depression Detected</h2>
+
+<p>EEG patterns indicate elevated depression probability.</p>
+
+{% endif %}
+
+</div>
+
+<div class="card-grid">
+
+<div class="card">
+
+<h3>Depression Risk</h3>
+
+<div class="value">{{ probability }}%</div>
+
+<div class="progress">
+
+<div class="progress-bar"></div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>EEG Windows</h3>
+
+<div class="value">{{ windows }}</div>
+
+</div>
+
+<div class="card">
+
+<h3>Sampling Rate</h3>
+
+<div class="value">{{ sampling_rate }} Hz</div>
+
+</div>
+
+<div class="card">
+
+<h3>Filename</h3>
+
+<div class="value" style="font-size:18px;">
+{{ filename }}
+</div>
+
+</div>
+
+</div>
+
+<div class="interpretation">
+
+<h3>Clinical Interpretation</h3>
+
+<p>
+
+The AI model classified this EEG recording as
+<strong>{{ diagnosis }}</strong>.
+
+<br><br>
+
+Estimated depression probability:
+<strong>{{ probability }}%</strong>.
+
+<br><br>
+
+This application is intended as an AI-based screening aid and should not be used as a standalone clinical diagnosis. Final interpretation should always be performed by a qualified healthcare professional.
+
+</p>
+
+</div>
+
+<div class="button">
+
+<a href="/">Analyze Another EEG</a>
+
+</div>
+
+<div class="footer">
+
+NeuroScreenAI • Random Forest Classifier • Version 1.0
+
+</div>
+
+</div>
+
+</body>
+</html>

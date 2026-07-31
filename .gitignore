@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environments
+venv/
+.env
+.env.*
+
+# IDEs
+.vscode/
+.idea/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# User uploads and temporary files
+app/uploads/*
+!app/uploads/.gitkeep
+
+app/temp/*
+!app/temp/.gitkeep
+
+# Training data
+data/
+
+# Experimental results
+results/
+
+# Documentation output
+reports/
+
+# Notebook folder (optional)
+notebooks/
+
+# Temporary EEG processing files
+*.fif
+*.npz
+
+# OS files
+.DS_Store
+Thumbs.db

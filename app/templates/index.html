@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>NeuroScreenAI</title>
+
+    <link rel="stylesheet"
+          href="/static/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>NeuroScreenAI</h1>
+
+    <p class="subtitle">
+        EEG-Based Depression Screening
+    </p>
+
+    <form
+        action="/predict"
+        method="post"
+        enctype="multipart/form-data">
+
+        <input
+            type="file"
+            name="file"
+            accept=".edf"
+            required>
+
+        <button type="submit">
+            Analyze EEG
+        </button>
+
+    </form>
+
+</div>
+
+<!-- ========================================= -->
+<!-- Animated EEG Background -->
+<!-- ========================================= -->
+
+<div class="eeg-background">
+
+    <svg
+        viewBox="0 0 1600 220"
+        preserveAspectRatio="none">
+
+        <path
+            class="eeg-line"
+
+            d="
+            M0 110
+            L40 110
+            L60 110
+            L75 40
+            L90 180
+            L110 60
+            L130 110
+            L180 110
+
+            L230 110
+            L245 70
+            L260 150
+            L280 110
+
+            L340 110
+            L355 55
+            L370 170
+            L390 80
+            L410 110
+
+            L470 110
+            L485 90
+            L500 130
+            L520 110
+
+            L600 110
+            L620 30
+            L640 190
+            L660 55
+            L680 110
+
+            L760 110
+            L780 110
+            L800 110
+
+            L860 110
+            L880 70
+            L900 160
+            L920 110
+
+            L980 110
+            L1000 45
+            L1020 180
+            L1040 70
+            L1060 110
+
+            L1160 110
+            L1180 110
+            L1200 110
+
+            L1260 110
+            L1280 85
+            L1300 135
+            L1320 110
+
+            L1400 110
+            L1420 40
+            L1440 190
+            L1460 60
+            L1480 110
+
+            L1600 110
+            "/>
+
+    </svg>
+
+</div>
+
+</body>
+
+</html>
