@@ -1,0 +1,15 @@
+.git
+.gitignore
+__pycache__/
+*.pyc
+*.pyo
+
+venv/
+.env
+
+app/uploads/*
+results/
+data/
+
+*.fif
+*.npz
