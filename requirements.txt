@@ -1,0 +1,14 @@
+numpy
+scipy
+pandas
+scikit-learn==1.3.2
+mne==1.11.0
+mne-connectivity==0.8.1
+joblib
+PySide6
+matplotlib
+reportlab
+pyinstaller
+xgboost==1.6.0
+catboost
+pyqtgraph
