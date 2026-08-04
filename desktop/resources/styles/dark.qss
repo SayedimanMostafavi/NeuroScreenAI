@@ -1,0 +1,152 @@
+/* ==========================================================
+   NeuroScreenAI Theme
+   ========================================================== */
+
+QMainWindow {
+    background: #121212;
+}
+
+/* General */
+
+QWidget {
+    background: #121212;
+    color: white;
+    font-family: "Segoe UI";
+    font-size: 11pt;
+}
+
+/* Sidebar */
+
+QListWidget {
+    background: #1B1F23;
+    border: none;
+    color: white;
+    font-size: 12pt;
+    padding: 10px;
+}
+
+QListWidget::item {
+    border-radius: 10px;
+    padding: 14px;
+    margin: 6px;
+}
+
+QListWidget::item:selected {
+    background: #00B4D8;
+    color: black;
+    font-weight: bold;
+}
+
+QListWidget::item:hover {
+    background: #2A2F36;
+}
+
+/* Buttons */
+
+QPushButton {
+
+    background: #00B4D8;
+    color: black;
+
+    border-radius: 12px;
+
+    padding: 12px;
+
+    font-size: 12pt;
+
+    font-weight: bold;
+
+}
+
+QPushButton:hover {
+
+    background: #4CC9F0;
+
+}
+
+QPushButton:pressed {
+
+    background: #0096C7;
+
+}
+
+/* Labels */
+
+QLabel {
+
+    background: transparent;
+
+}
+
+/* Group Boxes */
+
+QGroupBox {
+
+    border: 1px solid #2D333B;
+
+    border-radius: 15px;
+
+    margin-top: 15px;
+
+    padding: 20px;
+
+    background: #1B1F23;
+
+}
+
+QGroupBox::title {
+
+    subcontrol-origin: margin;
+
+    left: 15px;
+
+    padding: 5px;
+
+    color: #00B4D8;
+
+    font-weight: bold;
+
+    font-size: 12pt;
+
+}
+
+
+
+
+
+/* ==========================================================
+   Cards
+   ========================================================== */
+
+QFrame#card {
+
+    background: #1B1F23;
+
+    border: 1px solid #2D333B;
+
+    border-radius: 15px;
+
+}
+
+QLabel#cardTitle {
+
+    font-size: 14pt;
+
+    font-weight: bold;
+
+    color: #00B4D8;
+
+    padding-bottom: 10px;
+
+}
+
+
+
+
+QLabel#infoValue{
+
+    color:#00B4D8;
+
+    font-weight:bold;
+
+}

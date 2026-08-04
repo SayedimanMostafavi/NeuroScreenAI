@@ -1,43 +1,51 @@
-# Python
+﻿# Python
 __pycache__/
-*.py[cod]
-*.so
+*.pyc
+*.pyo
+*.pyd
 
 # Virtual environments
 venv/
 .env
 .env.*
 
-# IDEs
+# PyInstaller
+build/
+dist/
+*.spec.bak
+
+# IDE
 .vscode/
 .idea/
 
-# Jupyter
-.ipynb_checkpoints/
-
-# User uploads and temporary files
-app/uploads/*
-!app/uploads/.gitkeep
-
-app/temp/*
-!app/temp/.gitkeep
-
-# Training data
-data/
-
-# Experimental results
-results/
-
-# Documentation output
-reports/
-
-# Notebook folder (optional)
-notebooks/
-
-# Temporary EEG processing files
-*.fif
-*.npz
-
-# OS files
+# OS
 .DS_Store
 Thumbs.db
+
+# Research outputs
+results/
+catboost_info/
+
+# Release packages
+Release_v1/
+*.zip
+
+# Large datasets
+data/
+
+# Logs
+*.log
+
+# Uploaded EEG files
+app/uploads/
+
+# Generated reports and history
+history/
+*.pdf
+
+
+research/models/
+
+
+desktop/build/
+desktop/dist/
